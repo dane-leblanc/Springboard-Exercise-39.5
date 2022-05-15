@@ -5,3 +5,8 @@ import Card from "./Card";
 it("renders Card without crashing", () => {
   render(<Card />);
 });
+
+it("matches snapshot", () => {
+  const { asFragment } = render(<Card />);
+  expect(asFragment()).toMatchSnapshot();
+});
